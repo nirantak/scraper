@@ -8,25 +8,23 @@
 
 ### Installation
 Clone the git repository:
-```Shell
+```bash
 $ git clone https://github.com/nirantak/scraper.git && cd scraper
 ```
 
 Install necessary dependencies
-```Shell
+```bash
 $ pip install -r requirements.txt
 ```
 
 ### Usage
-Save Instagram username and password in file **config.json** as:
-```JSON
-{
-    "username":"your_username_here",
-    "password":"your_password_here"
-}
+Save Instagram username and password in file **config.py** as:
+```python
+USERNAME = "your_username_here"
+PASSWORD = "your_password_here"
 ```
 Run script
-```Shell
+```bash
 $ python instagram.py
 ```
 

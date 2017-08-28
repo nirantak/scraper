@@ -1,13 +1,11 @@
-import json
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 
-with open('config.json', 'r') as f:
-	config = json.load(f)
-username = config["username"]
-password = config["password"]
+import config
+username = config.USERNAME
+password = config.PASSWORD
 
 def login(driver):
 	# Load page
