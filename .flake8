@@ -1,0 +1,13 @@
+[flake8]
+
+count = True
+max-line-length = 120
+statistics = True
+verbose = 1
+
+exclude =
+	.git,
+	*migrations*,
+	__pycache__,
+	manage.py,
+	node_modules,

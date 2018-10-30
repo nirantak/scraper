@@ -1,5 +1,5 @@
-README.html
-config.py
+.idea
+.vscode
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
@@ -53,10 +53,6 @@ coverage.xml
 *.mo
 *.pot
 
-# Django stuff:
-*.log
-local_settings.py
-
 # Flask stuff:
 instance/
 .webassets-cache
@@ -84,6 +80,7 @@ celerybeat-schedule
 
 # dotenv
 .env
+.envrc
 
 # virtualenv
 .venv

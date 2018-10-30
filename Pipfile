@@ -1,0 +1,23 @@
+[[source]]
+url = "https://pypi.org/simple"
+verify_ssl = true
+name = "pypi"
+
+[requires]
+python_version = "3.7"
+python_full_version = "3.7.1"
+
+[scripts]
+format = "black . --verbose"
+lint = "flake8 --max-line-length=120 --statistics --count"
+
+[packages]
+beautifulsoup4 = "*"
+requests = "*"
+selenium = "*"
+
+[dev-packages]
+"flake8" = "*"
+black = "*"
+pytest = "*"
+rope = "*"
