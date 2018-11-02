@@ -1,3 +1,5 @@
+#!/usr/bin/env python3
+
 import os
 from typing import List
 
@@ -44,8 +46,8 @@ def scrape_followers(driver: webdriver, username: str) -> List[str]:
 
 if __name__ == "__main__":
     driver = webdriver.Chrome("drivers/chromedriver_linux64")
-    user = os.environ["USERNAME"]
-    passwd = os.environ["PASSWORD"]
+    user = os.environ["IG_USERNAME"]
+    passwd = os.environ["IG_PASSWORD"]
 
     try:
         login(driver, user, passwd)

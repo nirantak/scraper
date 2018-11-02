@@ -9,7 +9,9 @@ python_full_version = "3.7.1"
 
 [scripts]
 format = "black . --verbose"
-lint = "flake8 --max-line-length=120 --statistics --count"
+lint = "flake8 --max-line-length=100 --statistics --count"
+ticket = "python ticket_prices.py"
+instagram = "python instagram.py"
 
 [packages]
 beautifulsoup4 = "*"
@@ -19,5 +21,6 @@ selenium = "*"
 [dev-packages]
 "flake8" = "*"
 black = "*"
+pre-commit = "*"
 pytest = "*"
 rope = "*"
