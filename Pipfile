@@ -4,12 +4,11 @@ verify_ssl = true
 name = "pypi"
 
 [requires]
-python_version = "3.7"
 python_full_version = "3.7.1"
 
 [scripts]
 format = "black . --verbose"
-lint = "flake8 --max-line-length=100 --statistics --count"
+lint = "flake8 --statistics --count"
 ticket = "python ticket_prices.py"
 instagram = "python instagram.py"
 
