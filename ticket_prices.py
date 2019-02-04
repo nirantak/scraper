@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
 
+import locale
 from datetime import datetime
 from typing import Set, Tuple
 
@@ -12,6 +13,7 @@ from selenium.webdriver.support.ui import WebDriverWait
 URL: str = "full_url_here"
 SCREENSHOT_PATH: str = "./screenshots"
 CHROMEDRIVER_PATH: str = "./drivers/chromedriver_linux64"
+locale.setlocale(locale.LC_ALL, "en_US.UTF8")
 
 
 def get_price(driver: webdriver) -> Tuple[datetime, str, Set[str]]:
@@ -33,7 +35,7 @@ def get_price(driver: webdriver) -> Tuple[datetime, str, Set[str]]:
         f"{SCREENSHOT_PATH}/ticket-prices_{timestamp.strftime('%d-%m-%Y_%H-%M-%S')}.png"
     )
 
-    return timestamp, currency[0].text, {i.text for i in prices}
+    return timestamp, currency[0].text, {locale.atof(i.text) for i in prices}
 
 
 def write_price():
@@ -45,12 +47,11 @@ if __name__ == "__main__":
     options.headless = True
     options.add_argument("window-size=1280x720")
 
-    driver = webdriver.Chrome(executable_path=CHROMEDRIVER_PATH, options=options)
-
-    try:
-        timestamp, currency, prices = get_price(driver)
-        print(f"{timestamp.strftime('%d-%m-%Y %H:%M:%S')} -- {currency} {min(prices)}")
-    except Exception as e:
-        print(f"Error: {e}")
-    finally:
-        driver.quit()
+    with webdriver.Chrome(executable_path=CHROMEDRIVER_PATH, options=options) as driver:
+        try:
+            timestamp, currency, prices = get_price(driver)
+            print(
+                f"{timestamp.strftime('%d-%m-%Y %H:%M:%S')} -- {currency} {min(prices)}"
+            )
+        except Exception as e:
+            print(f"Error: {e}")
