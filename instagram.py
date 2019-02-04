@@ -16,7 +16,7 @@ USERNAME: str = os.environ["IG_USERNAME"]
 PASSWORD: str = os.environ["IG_PASSWORD"]
 
 
-def login(driver: webdriver, username: str, password: str):
+def login(driver: webdriver, username: str, password: str) -> object:
     # Load page
     driver.get("https://www.instagram.com/accounts/login/")
 
@@ -32,12 +32,15 @@ def login(driver: webdriver, username: str, password: str):
 
     # Wait for 2FA or Profile link to appear
     WebDriverWait(driver, 30).until(
-        EC.presence_of_element_located((By.LINK_TEXT, "Profile"))
+        EC.presence_of_element_located(
+            (By.CSS_SELECTOR, "a span[aria-label='Profile']")
+        )
     )
 
-    pickle.dump(
-        driver.get_cookies(), open(f"{COOKIES_PATH}/instagram-cookies.pkl", "wb")
-    )
+    cookies = driver.get_cookies()
+
+    pickle.dump(cookies, open(f"{COOKIES_PATH}/instagram-cookies.pkl", "wb"))
+    return cookies
 
 
 def scrape_followers(
@@ -92,24 +95,18 @@ if __name__ == "__main__":
     options.headless = False
     options.add_argument("window-size=1200x700")
 
-    driver = webdriver.Chrome(executable_path=CHROMEDRIVER_PATH, options=options)
-
-    try:
+    with webdriver.Chrome(executable_path=CHROMEDRIVER_PATH, options=options) as driver:
         try:
-            cookies: List[Dict[str, Any]] = pickle.load(
+            cookies: object = pickle.load(
                 open(f"{COOKIES_PATH}/instagram-cookies.pkl", "rb")
             )
         except FileNotFoundError:
-            login(driver, USERNAME, PASSWORD)
+            cookies = login(driver, USERNAME, PASSWORD)
 
         num_followers, num_following, followers, following = scrape_followers(
             driver, USERNAME, cookies
         )
 
-        print(f"{USERNAME}: {num_followers} followers, {num_following} following")
-        print(f"\nFollowers: {followers}")
-        print(f"\nFollowing: {following}")
-    except Exception as e:
-        print(f"Error: {e}")
-    finally:
-        driver.quit()
+    print(f"{USERNAME}: {num_followers} followers, {num_following} following")
+    print(f"\nFollowers: {followers}")
+    print(f"\nFollowing: {following}")
