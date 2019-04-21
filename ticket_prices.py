@@ -10,7 +10,7 @@ from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.support.ui import WebDriverWait
 
 # Config
-URL: str = "full_url_here"
+URL: str = "full-url-here"
 SCREENSHOT_PATH: str = "./screenshots"
 CHROMEDRIVER_PATH: str = "./drivers/chromedriver_linux64"
 locale.setlocale(locale.LC_ALL, "en_US.UTF8")
@@ -47,7 +47,9 @@ if __name__ == "__main__":
     options.headless = True
     options.add_argument("window-size=1280x720")
 
-    with webdriver.Chrome(executable_path=CHROMEDRIVER_PATH, options=options) as driver:
+    with webdriver.Chrome(
+        executable_path=CHROMEDRIVER_PATH, options=options
+    ) as driver:
         try:
             timestamp, currency, prices = get_price(driver)
             print(

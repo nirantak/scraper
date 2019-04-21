@@ -22,12 +22,18 @@ def login(driver: webdriver, username: str, password: str) -> object:
 
     # Wait for 2FA or Profile link to appear
     WebDriverWait(driver, 10).until(
-        EC.presence_of_element_located((By.CSS_SELECTOR, "button[type='submit']"))
+        EC.presence_of_element_located(
+            (By.CSS_SELECTOR, "button[type='submit']")
+        )
     )
 
     # Login
-    driver.find_element_by_css_selector("input[name='username']").send_keys(username)
-    driver.find_element_by_css_selector("input[name='password']").send_keys(password)
+    driver.find_element_by_css_selector("input[name='username']").send_keys(
+        username
+    )
+    driver.find_element_by_css_selector("input[name='password']").send_keys(
+        password
+    )
     driver.find_element_by_css_selector("button[type='submit']").click()
 
     # Wait for 2FA or Profile link to appear
@@ -95,7 +101,9 @@ if __name__ == "__main__":
     options.headless = False
     options.add_argument("window-size=1200x700")
 
-    with webdriver.Chrome(executable_path=CHROMEDRIVER_PATH, options=options) as driver:
+    with webdriver.Chrome(
+        executable_path=CHROMEDRIVER_PATH, options=options
+    ) as driver:
         try:
             cookies: object = pickle.load(
                 open(f"{COOKIES_PATH}/instagram-cookies.pkl", "rb")

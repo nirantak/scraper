@@ -5,12 +5,12 @@
 ## Table of Contents
 
 - [Scraper](#scraper)
-    - [Table of Contents](#table-of-contents)
-    - [Installation](#installation)
-    - [Usage](#usage)
-        - [Ticket Price Scraper](#ticket-price-scraper)
-        - [Instagram Followers Scraper](#instagram-followers-scraper)
-    - [Requirements](#requirements)
+  - [Table of Contents](#table-of-contents)
+  - [Installation](#installation)
+  - [Usage](#usage)
+    - [Ticket Price Scraper](#ticket-price-scraper)
+    - [Instagram Followers Scraper](#instagram-followers-scraper)
+  - [Requirements](#requirements)
 
 ## Installation
 
@@ -51,5 +51,5 @@ $ pipenv run instagram
 
 ## Requirements
 
-1. [Python 3.7.1](https://www.python.org/downloads/)
+1. [Python 3.7.3](https://www.python.org/downloads/)
 2. [ChromeDriver](https://sites.google.com/a/chromium.org/chromedriver/downloads)
