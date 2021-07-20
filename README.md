@@ -1,6 +1,6 @@
 # Scraper
 
-> *A Python web scraper built using BS4 and Selenium*
+> _A Python web scraper built using BS4 and Selenium_
 
 ## Table of Contents
 
@@ -17,14 +17,16 @@
 Clone the git repository:
 
 ```bash
-$ git clone https://github.com/nirantak/scraper.git && cd scraper
+git clone https://github.com/nirantak/scraper.git && cd scraper
 ```
 
 Install necessary dependencies
 
 ```bash
-$ pip install -U pip pipenv
-$ pipenv install --dev
+python3 -m venv .venv
+source .venv/bin/activate
+pip install -U pip wheel setuptools
+pip install -U -r requirements.txt
 ```
 
 ## Usage
@@ -36,7 +38,7 @@ Fill all variables in the top **# Config** section.
 Run script
 
 ```bash
-$ pipenv run ticket
+python ticket_prices.py
 ```
 
 ### Instagram Followers Scraper
@@ -46,10 +48,10 @@ Rename file **sample.env** as **.env**, and fill all environment variables (user
 Run script
 
 ```bash
-$ pipenv run instagram
+python instagram.py
 ```
 
 ## Requirements
 
-1. [Python 3.7.3](https://www.python.org/downloads/)
+1. [Python 3.9.6](https://www.python.org/downloads/)
 2. [ChromeDriver](https://sites.google.com/a/chromium.org/chromedriver/downloads)

@@ -4,12 +4,14 @@ import os
 import pickle
 from typing import Any, Dict, List, Set, Tuple
 
+from dotenv import load_dotenv
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.support.ui import WebDriverWait
 
 # Config
+load_dotenv()
 CHROMEDRIVER_PATH: str = "./drivers/chromedriver_linux64"
 COOKIES_PATH: str = "./cookies"
 USERNAME: str = os.environ["IG_USERNAME"]

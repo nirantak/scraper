@@ -1,0 +1,7 @@
+beautifulsoup4
+requests
+selenium
+python-dotenv
+black
+flake8
+pre-commit
