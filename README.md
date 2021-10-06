@@ -27,6 +27,7 @@ python3 -m venv .venv
 source .venv/bin/activate
 pip install -U pip wheel setuptools
 pip install -U -r requirements.txt
+playwright install
 ```
 
 ## Usage
