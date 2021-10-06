@@ -8,8 +8,6 @@
   - [Table of Contents](#table-of-contents)
   - [Installation](#installation)
   - [Usage](#usage)
-    - [Ticket Price Scraper](#ticket-price-scraper)
-    - [Instagram Followers Scraper](#instagram-followers-scraper)
   - [Requirements](#requirements)
 
 ## Installation
@@ -32,27 +30,10 @@ playwright install
 
 ## Usage
 
-### Ticket Price Scraper
+See [scripts/README.md](scripts/) for usage instructions.
 
-Fill all variables in the top **# Config** section.
-
-Run script
-
-```bash
-python scripts/ticket_prices.py
-```
-
-### Instagram Followers Scraper
-
-Rename file **sample.env** as **.env**, and fill all environment variables (username, password).
-
-Run script
-
-```bash
-python scripts/instagram.py
-```
+Samples present in [demo/](demo/).
 
 ## Requirements
 
 1. [Python 3.10](https://www.python.org/downloads/)
-2. [ChromeDriver](https://sites.google.com/a/chromium.org/chromedriver/downloads)
