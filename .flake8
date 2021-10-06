@@ -6,8 +6,8 @@ statistics = True
 verbose = 1
 
 exclude =
-    .git,
-    *migrations*,
-    __pycache__,
-    manage.py,
-    node_modules,
+  .git,
+  *migrations*,
+  __pycache__,
+  manage.py,
+  node_modules,

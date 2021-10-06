@@ -1,7 +1,8 @@
 beautifulsoup4
-requests
-selenium
-python-dotenv
 black
 flake8
+httpx
+playwright
 pre-commit
+python-dotenv
+selenium

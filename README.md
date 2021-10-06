@@ -1,6 +1,6 @@
 # Scraper
 
-> _A Python web scraper built using BS4 and Selenium_
+> _Python web scrapers built using Selenium, BS4 and Playwright_
 
 ## Table of Contents
 
@@ -38,7 +38,7 @@ Fill all variables in the top **# Config** section.
 Run script
 
 ```bash
-python ticket_prices.py
+python scripts/ticket_prices.py
 ```
 
 ### Instagram Followers Scraper
@@ -48,10 +48,10 @@ Rename file **sample.env** as **.env**, and fill all environment variables (user
 Run script
 
 ```bash
-python instagram.py
+python scripts/instagram.py
 ```
 
 ## Requirements
 
-1. [Python 3.9.6](https://www.python.org/downloads/)
+1. [Python 3.10](https://www.python.org/downloads/)
 2. [ChromeDriver](https://sites.google.com/a/chromium.org/chromedriver/downloads)
