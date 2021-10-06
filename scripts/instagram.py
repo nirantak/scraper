@@ -2,7 +2,7 @@
 
 import os
 import pickle
-from typing import Any, Dict, List, Set, Tuple
+from typing import Any
 
 from dotenv import load_dotenv
 from selenium import webdriver
@@ -52,8 +52,8 @@ def login(driver: webdriver, username: str, password: str) -> object:
 
 
 def scrape_followers(
-    driver: webdriver, username: str, cookies: List[Dict[str, Any]] = None
-) -> Tuple[str, str, Set[str], Set[str]]:
+    driver: webdriver, username: str, cookies: list[dict[str, Any]] = None
+) -> tuple[str, str, set[str], set[str]]:
     # CSS Selector for followers and following lists
     list_css: str = "div[role='dialog'] a.notranslate"
 
@@ -79,8 +79,8 @@ def scrape_followers(
         EC.visibility_of_all_elements_located((By.CSS_SELECTOR, list_css))
     )
     # TODO: Scrolling Magic here
-    _followers: List = driver.find_elements_by_css_selector(list_css)
-    followers: Set[str] = {i.text for i in _followers}
+    _followers: list = driver.find_elements_by_css_selector(list_css)
+    followers: set[str] = {i.text for i in _followers}
 
     driver.find_element_by_css_selector(
         "div[role='dialog'] button span[aria-label='Close']"
@@ -92,8 +92,8 @@ def scrape_followers(
         EC.visibility_of_all_elements_located((By.CSS_SELECTOR, list_css))
     )
     # TODO: Scrolling Magic here
-    _following: List = driver.find_elements_by_css_selector(list_css)
-    following: Set[str] = {i.text for i in _following}
+    _following: list = driver.find_elements_by_css_selector(list_css)
+    following: set[str] = {i.text for i in _following}
 
     return (num_followers, num_following, followers, following)
 

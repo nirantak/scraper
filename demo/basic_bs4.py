@@ -3,7 +3,7 @@
 import httpx
 from bs4 import BeautifulSoup
 
-url = "https://docs.python.org/3/library/functions.html"
+url: str = "https://docs.python.org/3/library/functions.html"
 req = httpx.get(url)
 soup = BeautifulSoup(req.content, "html.parser")
 
@@ -12,7 +12,6 @@ soup = BeautifulSoup(req.content, "html.parser")
 #         print(link.text, link.get("href"))
 
 data = soup.find_all("dl", {"class": "function"})
-# print(data)
 
 for item in data:
     print(f"{item.find('code').text}:\n{item.find('p').text}\n")
