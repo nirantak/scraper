@@ -13,7 +13,7 @@
 
 ### Ticket Price Scraper
 
-Fill all variables in the top **# Config** section.
+Fill all variables in the top `# Config` section.
 
 Run script
 
@@ -23,7 +23,7 @@ python scripts/archive/ticket_prices.py
 
 ### Instagram Followers Scraper
 
-Rename file **sample.env** as **.env**, and fill all environment variables (username, password).
+Rename file `sample.env` as `.env`, and fill all environment variables (username, password).
 
 Run script
 

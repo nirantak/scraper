@@ -18,8 +18,8 @@ if DEBUG:
     OPTS["headless"] = False
     OPTS["slow_mo"] = 500
 
-with sync_playwright() as p:
-    browser = p.chromium.launch(
+with sync_playwright() as play:
+    browser = play.chromium.launch(
         headless=OPTS["headless"], slow_mo=OPTS["slow_mo"]
     )
     page = browser.new_page()
