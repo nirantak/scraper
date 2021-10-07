@@ -12,17 +12,19 @@
 
 ### TV Time
 
-- Environment variables: `TV_TIME_USERNAME`, `TV_TIME_PASSWORD`, `TV_TIME_USERID`
-- If `TV_TIME_PASSWORD` is set, it will be used along with `TV_TIME_USERNAME` to log in to TV Time.
-  - `TV_TIME_USERID` is optional in this case, and if not set the script will find and output the User ID.
-- If `TV_TIME_PASSWORD` is not set then `TV_TIME_USERID` is required, and the script will assume it is a public profile and continue without login.
-  - `TV_TIME_USERNAME` is optional in this case, and if not set the script will find and output the username.
-- To get the list of all your TV Shows, run the script after setting the required environment variables:
+- Environment variables or command line inputs: `TV_TIME_USERNAME`, `TV_TIME_PASSWORD`, `TV_TIME_USERID`
+- Command line argument: `public` or `private`
+
+  - If `public` is passed, the User ID is required (The username will be printed in the output).
+  - If `private` is passed, a username and password will be needed to login (The user id will be printed in the output).
+
+- To get the list of all your TV Shows, run the script:
 
   ```bash
-  python scripts/tv_time.py
+  python scripts/tv_time.py [public|private]
   ```
 
+- If no environment variables are set, the script will prompt for the same.
 - Note: Currently Movies don't show up in the TV Time website, and the stats page is broken.
 
 ### Archived
