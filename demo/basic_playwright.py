@@ -13,6 +13,7 @@ OPTS: dict[str, Any] = {
 }
 
 if DEBUG:
+    # Set DEBUG = True to see the browser in action
     os.environ["PWDEBUG"] = "console"
     # os.environ["PWDEBUG"] = "1"
     OPTS["headless"] = False
