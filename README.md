@@ -16,6 +16,7 @@ Clone the git repository:
 
 ```bash
 git clone https://github.com/nirantak/scraper.git && cd scraper
+cp -nv .env.sample .env  # copy and update the env variables
 ```
 
 Install necessary dependencies
