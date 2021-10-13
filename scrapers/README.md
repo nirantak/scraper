@@ -4,11 +4,11 @@
 
 - [Scrapers](#scrapers)
   - [Table of Contents](#table-of-contents)
-  - [Scripts](#scripts)
+  - [Usage](#usage)
     - [TV Time](#tv-time)
     - [Archived](#archived)
 
-## Scripts
+## Usage
 
 ### TV Time
 
@@ -21,7 +21,7 @@
 - To get the list of all your TV Shows, run the script:
 
   ```bash
-  python scripts/tv_time.py [public|private]
+  python -m scrapers.tv_time [public|private]
   ```
 
 - If no environment variables are set, the script will prompt for the same.

@@ -1,8 +1,8 @@
-# Archived
+# Archived Scrapers
 
 ## Table of Contents
 
-- [Archived](#archived)
+- [Archived Scrapers](#archived-scrapers)
   - [Table of Contents](#table-of-contents)
   - [Usage](#usage)
     - [Ticket Price Scraper](#ticket-price-scraper)
@@ -18,7 +18,7 @@ Fill all variables in the top `# Config` section.
 Run script
 
 ```bash
-python scripts/archive/ticket_prices.py
+python ticket_prices.py
 ```
 
 ### Instagram Followers Scraper
@@ -28,9 +28,9 @@ Rename file `sample.env` as `.env`, and fill all environment variables (username
 Run script
 
 ```bash
-python scripts/archive/instagram.py
+python instagram.py
 ```
 
 ## Requirements
 
-1. [ChromeDriver](https://sites.google.com/a/chromium.org/chromedriver/downloads)
+1. [ChromeDriver](https://sites.google.com/a/chromium.org/chromedriver/downloads) in the same directory as this script.

@@ -30,7 +30,7 @@ playwright install
 
 ## Usage
 
-See [scripts/README.md](scripts/) for usage instructions.
+See [scrapers/README.md](scrapers/) for usage instructions.
 
 Samples present in [demo/](demo/).
 

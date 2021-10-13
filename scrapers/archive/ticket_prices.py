@@ -10,8 +10,8 @@ from selenium.webdriver.support.ui import WebDriverWait
 
 # Config
 URL: str = "full-url-here"
-SCREENSHOT_PATH: str = "./screenshots"
-CHROMEDRIVER_PATH: str = "./drivers/chromedriver"
+SCREENSHOT_PATH: str = "."
+CHROMEDRIVER_PATH: str = "./chromedriver"
 locale.setlocale(locale.LC_ALL, "en_US.UTF8")
 
 

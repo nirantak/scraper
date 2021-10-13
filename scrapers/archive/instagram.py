@@ -12,8 +12,8 @@ from selenium.webdriver.support.ui import WebDriverWait
 
 # Config
 load_dotenv()
-CHROMEDRIVER_PATH: str = "./drivers/chromedriver"
-COOKIES_PATH: str = "./cookies"
+CHROMEDRIVER_PATH: str = "./chromedriver"
+COOKIES_PATH: str = "."
 USERNAME: str = os.environ["IG_USERNAME"]
 PASSWORD: str = os.environ["IG_PASSWORD"]
 

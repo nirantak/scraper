@@ -7,7 +7,7 @@ from playwright.sync_api import sync_playwright
 
 DEBUG: bool = False
 OPTS: dict[str, Any] = {
-    "ss_dir": "./screenshots",
+    "out_dir": "./out",
     "headless": True,
     "slow_mo": 0,
 }
@@ -25,7 +25,7 @@ with sync_playwright() as play:
     )
     page = browser.new_page()
     page.goto("http://whatsmyuseragent.org/")
-    page.screenshot(path=f"{OPTS['ss_dir']}/user_agent.png")
+    page.screenshot(path=f"{OPTS['out_dir']}/user_agent.png")
     print(f"Title: \t\t{page.title()}")
     print(f"User Agent: \t{page.inner_text('.user-agent').strip()}")
     print(f"IP: \t\t{page.inner_text('.ip-address').split(':')[-1].strip()}")
