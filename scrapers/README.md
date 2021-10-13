@@ -6,9 +6,13 @@
   - [Table of Contents](#table-of-contents)
   - [Usage](#usage)
     - [TV Time](#tv-time)
+    - [IMDb](#imdb)
     - [Archived](#archived)
 
 ## Usage
+
+- Environment variables:
+  - `DEBUG`: `true` to enable debug mode and show browser interactions.
 
 ### TV Time
 
@@ -26,6 +30,17 @@
 
 - If no environment variables are set, the script will prompt for the same.
 - Note: Currently Movies don't show up in the TV Time website, and the stats page is broken.
+
+### IMDb
+
+- Environment variables or command line inputs: `IMDB_EMAIL`, `IMDB_PASSWORD` to login.
+- To download your Watchlist and Ratings data, run:
+
+  ```bash
+  python -m scrapers.imdb
+  ```
+
+- If no environment variables are set, the script will prompt for the same.
 
 ### Archived
 

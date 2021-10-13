@@ -39,19 +39,19 @@ def get_input(fields: list[str]) -> list[str]:
 
 
 @contextmanager
-def run_playwright(browser_type: str, base_url: str | None = None) -> Page:
+def run_playwright(browser_name: str, **kwargs) -> Page:
     """
-    browser: 'chromium', 'webkit' or 'firefox'
+    browser_name: 'chromium', 'webkit' or 'firefox'
     """
     play: Playwright = sync_playwright().start()
-    browser: BrowserType = getattr(play, browser_type)
-    window: Browser = browser.launch(
+    browser_type: BrowserType = getattr(play, browser_name)
+    browser: Browser = browser_type.launch(
         headless=OPTS["headless"], slow_mo=OPTS["slow_mo"]
     )
-    page: Page = window.new_page(base_url=base_url)
+    page: Page = browser.new_page(**kwargs)
 
     try:
         yield page
     finally:
-        window.close()
+        browser.close()
         play.stop()
